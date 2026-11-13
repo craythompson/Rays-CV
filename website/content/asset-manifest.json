@@ -1,0 +1,65 @@
+[
+  {
+    "alt": "linkedin",
+    "src": "https://static.wixstatic.com/media/6ea5b4a88f0b4f91945b40499aa0af00.png/v1/fill/w_20,h_20,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/6ea5b4a88f0b4f91945b40499aa0af00.png",
+    "width": 20,
+    "base": "https://static.wixstatic.com/media/6ea5b4a88f0b4f91945b40499aa0af00.png",
+    "id": "image-01"
+  },
+  {
+    "alt": "",
+    "src": "https://static.wixstatic.com/media/d70b58_87f199c4080749178fc49bee92886296~mv2.jpeg/v1/fill/w_633,h_678,fp_0.57_0.21,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Ray%20Thompson%2C%20Akerna%20COO%20-%20Main%20Headshot%20%20(Med%20Size).jpeg",
+    "width": 633,
+    "base": "https://static.wixstatic.com/media/d70b58_87f199c4080749178fc49bee92886296~mv2.jpeg",
+    "id": "image-02"
+  },
+  {
+    "alt": "",
+    "src": "https://static.wixstatic.com/media/55d98a_3287270d83ef4efabfdd1f52d0dc6ec2~mv2.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/wolfgang-hasselmann-1ICIhK-ElJs-unsplash-edited.jpg",
+    "width": 147,
+    "base": "https://static.wixstatic.com/media/55d98a_3287270d83ef4efabfdd1f52d0dc6ec2~mv2.jpg",
+    "id": "image-03"
+  },
+  {
+    "alt": "Discussing the Numbers",
+    "src": "https://static.wixstatic.com/media/5da6025daca645e7baee50a929fe5b82.jpg/v1/fill/w_285,h_220,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5da6025daca645e7baee50a929fe5b82.jpg",
+    "width": 285,
+    "base": "https://static.wixstatic.com/media/5da6025daca645e7baee50a929fe5b82.jpg",
+    "id": "image-04"
+  },
+  {
+    "alt": "handshake isolated on business background",
+    "src": "https://static.wixstatic.com/media/d70b58_f2d94ca94f9a4b14945671a94ad90f58~mv2_d_4912_3636_s_4_2.jpg/v1/fill/w_284,h_220,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/d70b58_f2d94ca94f9a4b14945671a94ad90f58~mv2_d_4912_3636_s_4_2.jpg",
+    "width": 284,
+    "base": "https://static.wixstatic.com/media/d70b58_f2d94ca94f9a4b14945671a94ad90f58~mv2_d_4912_3636_s_4_2.jpg",
+    "id": "image-05"
+  },
+  {
+    "alt": "New Hires",
+    "src": "https://static.wixstatic.com/media/efca71643c9140c9bddaaddb6acb6e1f.jpg/v1/crop/x_346,y_0,w_4741,h_3412/fill/w_284,h_220,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/efca71643c9140c9bddaaddb6acb6e1f.jpg",
+    "width": 4741,
+    "base": "https://static.wixstatic.com/media/efca71643c9140c9bddaaddb6acb6e1f.jpg",
+    "id": "image-06"
+  },
+  {
+    "alt": "",
+    "src": "https://static.wixstatic.com/media/55d98a_8f2b36fd115a48fd962bb10cda85a429~mv2.jpg/v1/fill/w_1265,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/55d98a_8f2b36fd115a48fd962bb10cda85a429~mv2.jpg",
+    "width": 1265,
+    "base": "https://static.wixstatic.com/media/55d98a_8f2b36fd115a48fd962bb10cda85a429~mv2.jpg",
+    "id": "image-07"
+  },
+  {
+    "alt": "IMG_1847.jpeg",
+    "src": "https://static.wixstatic.com/media/d70b58_c4951f00bfd64e3599a267baef1530cf~mv2.jpeg/v1/fill/w_421,h_316,fp_0.59_0.47,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_1847.jpeg",
+    "width": 421,
+    "base": "https://static.wixstatic.com/media/d70b58_c4951f00bfd64e3599a267baef1530cf~mv2.jpeg",
+    "id": "image-08"
+  },
+  {
+    "alt": "IMG_4998.JPG",
+    "src": "https://static.wixstatic.com/media/d70b58_5fc622afd3554af2ba36652d2051a94b~mv2.jpg/v1/crop/x_0,y_120,w_1280,h_687/fill/w_1051,h_363,fp_0.99_0.58,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/d70b58_5fc622afd3554af2ba36652d2051a94b~mv2.jpg",
+    "width": 1280,
+    "base": "https://static.wixstatic.com/media/d70b58_5fc622afd3554af2ba36652d2051a94b~mv2.jpg",
+    "id": "image-09"
+  }
+]
