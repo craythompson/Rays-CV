@@ -1,0 +1,8 @@
+{
+  "name": "raythompson-preview",
+  "main": "dist/worker.mjs",
+  "compatibility_date": "2026-11-11",
+  "workers_dev": true,
+  "build": { "command": "npm run build" },
+  "vars": { "ALLOW_INDEXING": "false" }
+}
