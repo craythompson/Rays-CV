@@ -27,18 +27,21 @@ export function createHandler(files, sitemap) {
         return new Response(request.method==='HEAD'?null:sitemap,{headers});
       }
       if(path.endsWith('/')&&path!=='/')return new Response(null,{status:308,headers:{...Object.fromEntries(headers),'Location':url.pathname.slice(0,-1)+url.search}});
+      const notFound = !files[path] || path === '/404';
+      const pageIndexable = indexable && !notFound;
+      if(notFound) headers.set('X-Robots-Tag','noindex, nofollow, noarchive');
       const entry = files[path] || files['/404'];
       let body=entry.body;
       headers.set('Content-Type',entry.type);
       if(entry.type.startsWith('text/html')){
-        body=body.replaceAll('%%ROBOTS%%',indexable?'index, follow':'noindex, nofollow, noarchive')
+        body=body.replaceAll('%%ROBOTS%%',pageIndexable?'index, follow':'noindex, nofollow, noarchive')
           .replace('%%PREVIEW_HIDDEN%%',production?'hidden':'');
       }
       if(entry.encoding==='base64'){
         const bytes=Uint8Array.from(atob(body),c=>c.charCodeAt(0));
         body=bytes;headers.set('Cache-Control','public, max-age=86400');
       }
-      return new Response(request.method==='HEAD'?null:body,{status:files[path]?200:404,headers});
+      return new Response(request.method==='HEAD'?null:body,{status:notFound?404:200,headers});
     }
   };
 }

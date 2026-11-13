@@ -5,7 +5,7 @@ const routes=JSON.parse(await readFile(new URL('./dist/routes.json',import.meta.
 let checks=0;const check=(condition,message)=>{assert(condition,message);checks++;};
 for(const route of routes){
  const r=await handler.fetch(new Request('https://preview.example'+route),{ALLOW_INDEXING:'true'});
- check(r.status===200,route+' returns 200');
+ check(r.status===(route==='/404'?404:200),route+' returns expected status');
  check(r.headers.get('X-Robots-Tag').includes('noindex'),route+' preview protected');
  if(r.headers.get('Content-Type').startsWith('text/html')){
  const html=await r.text();check(html.includes('width=device-width, initial-scale=1'),route+' viewport');
@@ -19,6 +19,12 @@ for(const host of ['www.raythompson.info','raythompson.info']){
  const prod=await handler.fetch(new Request('https://'+host+'/'),{ALLOW_INDEXING:'true'});check(prod.headers.get('X-Robots-Tag')==='index, follow','Production can be indexed');
  check((await prod.text()).includes('content="index, follow"'),'Production meta indexing');
  const robots=await handler.fetch(new Request('https://'+host+'/robots.txt'),{ALLOW_INDEXING:'true'});check((await robots.text()).includes('Allow: /'),'Production robots allows crawling');
+ for(const path of ['/404','/not-a-real-page']){
+  const missing=await handler.fetch(new Request('https://'+host+path),{ALLOW_INDEXING:'true'});
+  check(missing.status===404,'Production missing page returns 404');
+  check(missing.headers.get('X-Robots-Tag').includes('noindex'),'Production missing page excluded from indexing');
+  check((await missing.text()).includes('content="noindex, nofollow, noarchive"'),'Production missing page meta excluded');
+ }
 }
 const previewRobots=await handler.fetch(new Request('https://raythompson-preview.ray-350.workers.dev/robots.txt'),{ALLOW_INDEXING:'true'});check((await previewRobots.text()).includes('Disallow: /'),'Preview robots disallows crawling');
 check((await handler.fetch(new Request('https://preview.example/not-a-page'))).status===404,'Unknown paths return 404');
