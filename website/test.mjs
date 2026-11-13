@@ -25,4 +25,13 @@ check((await handler.fetch(new Request('https://preview.example/not-a-page'))).s
 check((await handler.fetch(new Request('https://preview.example/background/'))).status===308,'Trailing slash redirect');
 check((await handler.fetch(new Request('https://preview.example/',{method:'POST'}))).status===405,'Unsupported methods blocked');
 check((await handler.fetch(new Request('https://preview.example/',{method:'HEAD'}))).status===200,'HEAD supported');
+const mvp=await (await handler.fetch(new Request('https://preview.example/mvp'))).text();
+check(mvp.includes('<ul><li>Engineer at heart</li><li>Sales closer</li><li>Financial acumen</li><li>Operator</li><li>Expert in SaaS economics</li></ul>'),'MVP differentiation is a five-item bulleted list');
+const profile=await (await handler.fetch(new Request('https://preview.example/personality-profile'))).text();
+check(profile.includes('class="profile-columns"'),'Personality page has explicit columns');
+check((profile.match(/class="profile-column"/g)||[]).length===2,'Personality page has two grouped columns');
+check(profile.includes('<ol><li>Proactivity, assertiveness'),'Predictive Index is a numbered list');
+const testimonials=await (await handler.fetch(new Request('https://preview.example/testimonials'))).text();
+check(!testimonials.includes('azquotes.com'),'Eastman quote is not linked to AZQuotes');
+check(testimonials.includes('href="https://www.linkedin.com/in/ray-thompson/details/recommendations/?detailScreenTabIndex=0">See more on Linkedin</a>'),'Full LinkedIn recommendations link present');
 console.log(JSON.stringify({passed:true,checks,routes:routes.length}));

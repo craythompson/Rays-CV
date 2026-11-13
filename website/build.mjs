@@ -15,15 +15,16 @@ const navLabel=p=>p.key==='mvp'?'MVP':p.key==='personality-profile'?'Personality
 function nav(current){return navPages.map(p=>`<a href="${esc(pathname(p))}"${p.key===current?' aria-current="page"':''}>${esc(navLabel(p))}</a>`).join('');}
 const contact=`<a href="mailto:ray@emailray.com">Ray@EmailRay.com</a><a href="tel:+13036481449">303-648-1449</a><a class="linkedin" href="https://www.linkedin.com/in/ray-thompson/" aria-label="Ray Thompson on LinkedIn">in</a>`;
 function text(value,key){
- const links=(sources[key]?.links||[]).filter(l=>l.text&&l.href&&!/^(mailto:|tel:)/.test(l.href)&&!['Overview','Background','MVP','Stats','Personality Profiles','Testimonials','Blog','Post','linkedin'].includes(l.text));
+ const links=(sources[key]?.links||[]).filter(l=>l.text&&l.href&&!/^(mailto:|tel:)/.test(l.href)&&!(key==='testimonials'&&l.href.startsWith('https://www.azquotes.com/'))&&!['Overview','Background','MVP','Stats','Personality Profiles','Testimonials','Blog','Post','linkedin'].includes(l.text));
  const unique=[...new Map(links.map(l=>[l.text,l])).values()].sort((a,b)=>b.text.length-a.text.length);
  let result=esc(value);const tokens=[];
  for(const l of unique){const label=esc(l.text);if(!result.includes(label))continue;const token='\u0001LINK'+tokens.length+'\u0002';tokens.push(`<a href="${esc(local(l.href))}">${label}</a>`);result=result.replaceAll(label,token);}
  return result.replace(/\u0001LINK(\d+)\u0002/g,(_,i)=>tokens[+i]);
 }
 function renderBlock(b,key){
- if(b.type==='heading')return `<h2>${text(b.text,key)}</h2>`;
- if(b.type==='list')return `<ul>${b.items.map(x=>`<li>${text(x,key)}</li>`).join('')}</ul>`;
+ if(b.type==='heading'){const tag=b.level===3?'h3':'h2';return `<${tag}>${text(b.text,key)}</${tag}>`;}
+ if(b.type==='list'){const tag=b.ordered?'ol':'ul';return `<${tag}>${b.items.map(x=>`<li>${text(x,key)}</li>`).join('')}</${tag}>`;}
+ if(b.type==='link')return `<p class="reference-link"><a href="${esc(b.href)}">${esc(b.text)}</a></p>`;
  if(b.type==='quote')return `<blockquote><p>${text(b.text,key)}</p></blockquote>`;
  const t=b.text||'';if(key==='stats'&&t.includes(' | ')){const [a,...rest]=t.split(' | ');return `<p><strong>${esc(a)}</strong> | ${text(rest.join(' | '),key)}</p>`;}
  return `<p>${text(t,key)}</p>`;
@@ -55,7 +56,11 @@ function interior(p){
    const start=bs.findIndex(x=>x.text?.includes('Thanks Ray.'));
    body=blocks(bs.slice(0,start),p.key)+quotes(bs.slice(start),p.key);
  }
- if(p.key==='personality-profile')body=`<div class="profile-panel"><h1>${esc(heading)}</h1>${body}</div>`;
+ if(p.key==='personality-profile'){
+   const split=bs.findIndex(b=>b.text?.includes('Knowing thyself'));
+   if(split<0)throw Error('Personality column boundary missing');
+   body=`<div class="profile-panel"><h1>${esc(heading)}</h1><div class="profile-columns"><section class="profile-column" aria-label="Summary, StrengthFinders, and DISC">${blocks(bs.slice(0,split),p.key)}</section><section class="profile-column" aria-label="Predictive Index, core motivations, and 5 Voices">${blocks(bs.slice(split),p.key)}</section></div></div>`;
+ }
  else body=`<h1>${esc(heading)}</h1>${body}`;
  return `<section class="page-surface ${esc(p.key)}"><div class="page-content">${lead?img(lead.local,p.key==='background'?'Ray and family enjoying a day skiing':'Ray enjoying the outdoors with a friend','lead-photo',true):''}${body}</div></section>`;
 }

@@ -282,24 +282,14 @@
         "text": "Diversity and broad experience. I have worked across all parts of the organization. Skilled at quickly zooming in and out appropriately. Capable of distinguishing the signal from the noise to drive positive results. Fast at understanding people to assess and activate their unique abilities to help organizations evolve."
       },
       {
-        "type": "paragraph",
-        "text": "Engineer at heart"
-      },
-      {
-        "type": "paragraph",
-        "text": "Sales closer"
-      },
-      {
-        "type": "paragraph",
-        "text": "Financial acumen"
-      },
-      {
-        "type": "paragraph",
-        "text": "Operator"
-      },
-      {
-        "type": "paragraph",
-        "text": "Expert in SaaS economics"
+        "type": "list",
+        "items": [
+          "Engineer at heart",
+          "Sales closer",
+          "Financial acumen",
+          "Operator",
+          "Expert in SaaS economics"
+        ]
       },
       {
         "type": "paragraph",
@@ -390,7 +380,7 @@
         "text": "PERSONALITY PROFILES"
       },
       {
-        "type": "heading",
+        "type": "paragraph",
         "text": "Don't take my word for it. What do the personality assessments say?"
       },
       {
@@ -407,7 +397,8 @@
           "Strategic/Future Thinker",
           "In-Service to Others",
           "Driven to Make an Impact"
-        ]
+        ],
+        "ordered": true
       },
       {
         "type": "heading",
@@ -415,7 +406,8 @@
       },
       {
         "type": "heading",
-        "text": "1. Individualization"
+        "text": "1. Individualization",
+        "level": 3
       },
       {
         "type": "paragraph",
@@ -423,7 +415,8 @@
       },
       {
         "type": "heading",
-        "text": "2. Achiever"
+        "text": "2. Achiever",
+        "level": 3
       },
       {
         "type": "paragraph",
@@ -431,7 +424,8 @@
       },
       {
         "type": "heading",
-        "text": "3. Strategic"
+        "text": "3. Strategic",
+        "level": 3
       },
       {
         "type": "paragraph",
@@ -439,7 +433,8 @@
       },
       {
         "type": "heading",
-        "text": "4. Self-Assurance"
+        "text": "4. Self-Assurance",
+        "level": 3
       },
       {
         "type": "paragraph",
@@ -447,7 +442,8 @@
       },
       {
         "type": "heading",
-        "text": "5. Ideation"
+        "text": "5. Ideation",
+        "level": 3
       },
       {
         "type": "paragraph",
@@ -469,7 +465,8 @@
           "Verbalizes his feelings",
           "Innovative",
           "Forward-looking and future-oriented"
-        ]
+        ],
+        "ordered": true
       },
       {
         "type": "paragraph",
@@ -480,40 +477,19 @@
         "text": "Predictive Index - Venturer"
       },
       {
-        "type": "paragraph",
-        "text": "Proactivity, assertiveness, and a sense of urgency in driving to reach personal goals. Openly challenges the world."
-      },
-      {
-        "type": "paragraph",
-        "text": "Has aptitude to spot trends in data or figure out how complex systems work. Task-focused; quickly notices and pushes to fix technical problems, assertively cutting through any personal/emotional issues."
-      },
-      {
-        "type": "paragraph",
-        "text": "Independent in putting forth their own ideas, which are often innovative and, if implemented, cause change. Resourcefully works through or around anything blocking completion of what they want to accomplish."
-      },
-      {
-        "type": "paragraph",
-        "text": "Analytical, critical, and creative thinking and action; little need for external validation before action. Private."
-      },
-      {
-        "type": "paragraph",
-        "text": "Driven to accomplish goals; pushes through roadblocks assertively. Communication is direct, to the point, and sometimes brusque."
-      },
-      {
-        "type": "paragraph",
-        "text": "Risk-taking, daring, and focus on future goals; this individual is more concerned with where they’re going than either how they’ll get there, or where they’ve been. Adaptable. operates flexibly."
-      },
-      {
-        "type": "paragraph",
-        "text": "Impatient for results; puts pressure on themself and others for rapid implementation, and is far less productive when doing routine work."
-      },
-      {
-        "type": "paragraph",
-        "text": "Makes decisions and takes action. Confident in their own ideas and unimpressed with tradition."
-      },
-      {
-        "type": "paragraph",
-        "text": "A flexible approach to “the book” often bends the rules and does things their own way. An innovative, \"outside the box\" thinker who is undaunted by failure."
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "Proactivity, assertiveness, and a sense of urgency in driving to reach personal goals. Openly challenges the world.",
+          "Has aptitude to spot trends in data or figure out how complex systems work. Task-focused; quickly notices and pushes to fix technical problems, assertively cutting through any personal/emotional issues.",
+          "Independent in putting forth their own ideas, which are often innovative and, if implemented, cause change. Resourcefully works through or around anything blocking completion of what they want to accomplish.",
+          "Analytical, critical, and creative thinking and action; little need for external validation before action. Private.",
+          "Driven to accomplish goals; pushes through roadblocks assertively. Communication is direct, to the point, and sometimes brusque.",
+          "Risk-taking, daring, and focus on future goals; this individual is more concerned with where they’re going than either how they’ll get there, or where they’ve been. Adaptable. operates flexibly.",
+          "Impatient for results; puts pressure on themself and others for rapid implementation, and is far less productive when doing routine work.",
+          "Makes decisions and takes action. Confident in their own ideas and unimpressed with tradition.",
+          "A flexible approach to “the book” often bends the rules and does things their own way. An innovative, \"outside the box\" thinker who is undaunted by failure."
+        ]
       },
       {
         "type": "heading",
@@ -525,7 +501,8 @@
           "Make an Impact",
           "To Serve",
           "Be Central"
-        ]
+        ],
+        "ordered": true
       },
       {
         "type": "heading",
@@ -559,6 +536,11 @@
       {
         "type": "heading",
         "text": "24 Testimonials on LinkedIn from staff to the C-Suite"
+      },
+      {
+        "type": "link",
+        "text": "See more on Linkedin",
+        "href": "https://www.linkedin.com/in/ray-thompson/details/recommendations/?detailScreenTabIndex=0"
       },
       {
         "type": "quote",
